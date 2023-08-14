@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { auth } from '../firebase';
 import MessageHeader from './MessageHeader'; // ¡Asegúrate de importar correctamente!
