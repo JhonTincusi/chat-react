@@ -1,38 +1,12 @@
-import PropTypes from 'prop-types'; // Importar PropTypes para la validación de las props
-import { auth } from '../firebase'; // Importar la instancia de autenticación de Firebase
+import PropTypes from 'prop-types';
+import MessageContent from './MessageContent';
 
-// Definir el componente Message
 const Message = ({ message }) => {
-  // Verificar si el mensaje fue enviado por el usuario actual
-  const isCurrentUser = auth.currentUser?.uid === message.uid;
-  
-  // Convertir la marca de tiempo del mensaje a un objeto Date
-  const date = new Date(message.timestamp?.seconds * 1000);
-  
-  // Opciones para formatear la fecha en formato 'mes día'
-  const options = { month: 'long', day: 'numeric' };
-  
-  // Formatear la hora y minutos en formato 'HH:mm'
-  const time = `${date.getHours()}:${String(date.getMinutes()).padStart(2, '0')}`;
-  
-  // Formatear la fecha en español usando las opciones definidas
-  const newDate = date.toLocaleDateString('es-ES', options);
-
-  // Renderizar el mensaje con la información formateada
   return (
-    <article className={isCurrentUser ? 'my-message' : 'message'}>
-      <div>
-        <div className='text-message'>
-          <p className="text">{message.text}</p>
-        </div>
-        <p className="user">{`${newDate} - ${time}`}</p>
-      </div>
-      <img src={message.photo} alt="user photo" />
-    </article>
+    <MessageContent message={message} />
   );
 };
 
-// Validar la prop 'message' utilizando PropTypes
 Message.propTypes = {
   message: PropTypes.shape({
     uid: PropTypes.string.isRequired,
@@ -44,4 +18,4 @@ Message.propTypes = {
   }).isRequired,
 };
 
-export default Message; // Exportar el componente Message
+export default Message;
