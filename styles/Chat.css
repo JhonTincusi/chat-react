@@ -1,0 +1,18 @@
+/* Estilos para la parte derecha que muestra el chat y el componente SendMessage */
+.Chat-app {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    background-color: #1a1a1a;
+  }
+  
+  /* Estilos para el componente Chat */
+  .Chat {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #581e1e;
+  }
+  

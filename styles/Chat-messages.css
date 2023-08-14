@@ -1,0 +1,139 @@
+/* Chat Section */
+/* Estilos del Chat */
+.chat-content {
+    background-repeat: no-repeat;
+    background-size: 100% 100%; /* Agranda la imagen para cubrir todo el contenedor */
+    background-position: center;
+    width: 75%;
+    margin: 0 auto;
+    padding: 40px;
+    height: 80vh;
+    overflow: auto;
+    background-color: #292b36;
+  }
+  
+  /* Message Section */
+  .message {
+    text-align: left;
+    margin-bottom: 10px;
+    display: flex;
+    padding-bottom: 10px;
+  }
+  
+  .message .text-message {
+    background-color: #fff;
+    display: inline-block;
+    border-radius: 8px;
+    padding: 10px 20px; /* Aumentamos el padding */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .message > div {
+    display: inline-block;
+    order: 1;
+  }
+  
+  .message img {
+    width: 50px; /* Aumentamos el tamaño de la foto */
+    height: 50px; /* Aumentamos el tamaño de la foto */
+    border-radius: 50%;
+    vertical-align: top;
+    margin-right: 10px;
+    object-fit: cover;
+    order: 0;
+  }
+  
+  .message p.text {
+    color: #000;
+    line-height: 1.8; /* Aumentamos el line-height */
+    margin: 0;
+    word-wrap: break-word;
+  }
+  
+  .message p.user {
+    font-size: 16px; /* Aumentamos el tamaño del texto del usuario */
+    margin-top: 10px;
+    color: white;
+  }
+  
+  .my-message {
+    text-align: right;
+    margin-bottom: 10px;
+  }
+  
+  .my-message .text-message {
+    background-color: #dcf8c6;
+    display: inline-block;
+    border-radius: 8px;
+    padding: 10px 20px; /* Aumentamos el padding */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .my-message > div {
+    display: inline-block;
+  }
+  
+  .my-message img {
+    width: 50px; /* Aumentamos el tamaño de la foto */
+    height: 50px; /* Aumentamos el tamaño de la foto */
+    border-radius: 50%;
+    vertical-align: top;
+    margin-left: 10px;
+  }
+  
+  .my-message p.text {
+    color: #000;
+    line-height: 1.8; /* Aumentamos el line-height */
+    margin: 0;
+    word-wrap: break-word;
+  }
+  
+  .my-message p.user {
+    font-size: 16px; /* Aumentamos el tamaño del texto del usuario */
+    margin-top: 10px;
+    color: rgb(255, 254, 254);
+  }
+  
+  /* Send Message Component */
+  .Formulario{
+    width: 100%;
+  }
+  form {
+    background-color: #f0f0f0;
+    padding: 10px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  
+  input[type="text"] {
+    border: solid 1px #d4d3d3;
+    padding: 12px;
+    font-size: 16px; /* Aumentamos el tamaño del texto del input */
+    border-radius: 8px;
+    outline: none;
+    flex-grow: 6;
+  }
+  
+  form button {
+    background-color: #128c7e;
+    padding: 12px 15px;
+    font-size: 16px; /* Aumentamos el tamaño del texto del botón */
+    border-radius: 8px;
+    outline: none;
+    border: 0px;
+    color: #fff;
+    flex-grow: 2;
+    transition: .3s;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #0d6e5c;
+  }
+  
+  form button i {
+    padding-left: 6px;
+  }
+  
