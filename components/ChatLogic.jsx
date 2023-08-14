@@ -4,28 +4,29 @@ import { database } from '../firebase';
 import { query, orderBy, onSnapshot, collection } from 'firebase/firestore';
 
 const ChatLogic = ({ render }) => {
-  const [messages, setMessages] = useState([]);
-  const scrollRef = useRef();
+  const [messages, setMessages] = useState([]); // Estado local para almacenar los mensajes
+  const scrollRef = useRef(); // Referencia para controlar el scroll
 
   useEffect(() => {
-    const unsubscribe = listenToMessages();
-    return () => unsubscribe();
+    const unsubscribe = listenToMessages(); // Suscripción a los cambios en la base de datos
+    return () => unsubscribe(); // Cancelar suscripción cuando el componente se desmonte
   }, []);
 
   const listenToMessages = () => {
-    const q = query(collection(database, 'messages'), orderBy('timestamp'));
+    const q = query(collection(database, 'messages'), orderBy('timestamp')); // Consulta a la base de datos
     return onSnapshot(q, (querySnapshot) => {
-      setMessages(querySnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id })));
+      setMessages(querySnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }))); // Actualizar los mensajes
     });
   };
 
   useEffect(() => {
+    // Scroll automático hacia abajo al recibir nuevos mensajes
     scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
   }, [messages]);
 
   return (
     <React.Fragment>
-      {render({ messages, scrollRef })}
+      {render({ messages, scrollRef })} {/* Renderizar la función de renderización con los mensajes y la referencia de scroll */}
     </React.Fragment>
   );
 };

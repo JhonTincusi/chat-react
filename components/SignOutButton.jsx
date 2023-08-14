@@ -8,6 +8,6 @@ const SignOutButton = () => {
       <i className="fa-brands fa-google"></i> Salir
     </button>
   );
-};
+};  
 
 export default SignOutButton;
